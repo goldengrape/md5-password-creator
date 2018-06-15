@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>set my_salt to "abc"set pwd_length to 20set main_pwd to the text returned of (display dialog "main pwd" default answer "" buttons {"OK"} default button 1)set app_name to the text returned of (display dialog "app name" default answer "" buttons {"OK"} default button 1)set the my_pwd to (main_pwd &amp; my_salt &amp; app_name)set sub_pwd to do shell script "/sbin/md5 -qs" &amp; my_pwdset the clipboard to (text 1 thru pwd_length of the sub_pwd)</string>
+					<string>set salt to ""set my_version to "2012spring"set pwd_length to 20set main_pwd to the text returned of (display dialog "main pwd" default answer "" buttons {"OK"} default button 1)set app_name to the text returned of (display dialog "app name" default answer "" buttons {"OK"} default button 1)set md5_main_pwd to do shell script "/sbin/md5 -qs" &amp; main_pwdset md5_salt to do shell script "/sbin/md5 -qs" &amp; saltset md5_app_name to do shell script "/sbin/md5 -qs" &amp; app_nameset md5_version to do shell script "/sbin/md5 -qs" &amp; my_versionset the my_pwd to (md5_main_pwd &amp; md5_salt &amp; md5_app_name &amp; md5_version)set sub_pwd to do shell script "/sbin/md5 -qs" &amp; my_pwdset the clipboard to (text 1 thru pwd_length of the sub_pwd)</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -102,10 +102,12 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>449.000000:316.000000</string>
+				<string>449.000000:496.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
